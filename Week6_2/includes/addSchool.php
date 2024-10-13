@@ -7,7 +7,7 @@ $schoolType=$_POST['schoolType'];
 $email=$_POST['email'];
 $phone=$_POST['phone'];
 
-require('reusables/connect.php');
+require('../reusables/connect.php');
 
 $query = "INSERT INTO schools (`School Name`, `School Type`, `Phone`,`Email`)
 VALUES ('$schoolName', '$schoolType', '$phone','$email' )";

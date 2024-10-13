@@ -41,14 +41,17 @@
               <label for="schoolType" class="form-label">School Type</label>
               <input type="text" class="form-control" id="schoolType" name="schoolType">
             </div>
-            <div class="mb-3">
-              <label for="phone" class="form-label">Phone</label>
-              <input type="text" class="form-control" id="phone" name="phone">
-            </div>
+
             <div class="mb-3">
               <label for="email" class="form-label">Email</label>
               <input type="email" class="form-control" id="email" name="email">
             </div>
+
+            <div class="mb-3">
+              <label for="phone" class="form-label">Phone</label>
+              <input type="text" class="form-control" id="phone" name="phone">
+            </div>
+
             <button type="submit" class="btn btn-primary" name="addSchool">Add School</button>
           </form>
         </div>
