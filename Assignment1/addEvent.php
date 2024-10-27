@@ -20,6 +20,19 @@
       <div class="col-md-12">
         <h1 class="display-2">Add Event</h1>
       </div>
+      
+      <?php 
+      // Error Reporting
+        ini_set('display_errors', 1);
+        ini_set('display_startup_errors', 1);
+        error_reporting(E_ALL);
+
+        require('reusables/connect.php');
+        // Fetch available libraries for the dropdown
+        $librariesQuery = "SELECT library_id, library FROM librarylocation";
+        $librariesResult = mysqli_query($connect, $librariesQuery);
+      ?> 
+
     </div>
     <div class="row">
       <div class="col-md-5">
@@ -70,8 +83,14 @@
           </div>
 
           <div class="mb-3">
-            <label for="library_id" class="form-label">Library ID</label>
-            <input type="number" class="form-control" id="library_id" name="library_id" required>
+            <label for="library_id" class="form-label">Library For Event</label>
+            <select class="form-control" id="library_id" name="library_id" required>
+              <?php 
+                while ($library = mysqli_fetch_assoc($librariesResult)) { 
+                  echo "<option value='{$library['library_id']}'>{$library['library']}</option>";
+                }
+              ?>
+            </select>
           </div>
 
           <div class="mb-3">

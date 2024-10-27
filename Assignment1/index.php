@@ -27,6 +27,11 @@
     </div>
     <div class="row">
       <?php 
+        // Error Reporting
+        ini_set('display_errors', 1);
+        ini_set('display_startup_errors', 1);
+        error_reporting(E_ALL);
+        
         require('reusables/connect.php');
         $query = 'SELECT tpl_events_feed.*, librarylocation.library AS library 
                   FROM tpl_events_feed 

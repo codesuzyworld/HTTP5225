@@ -1,13 +1,13 @@
 <?php
-if (isset($_POST['updateEvent'])) {
-  $id = $_POST['_id'];
-  $title = $_POST['title'];
-  $library_id = $_POST['library_id'];
-  $startdate = $_POST['startdate'];
-  $enddate = $_POST['enddate'];
-  $starttime = $_POST['starttime'];
-  $endtime = $_POST['endtime'];
-  $description = $_POST['description'];
+  if (isset($_POST['updateEvent'])) {
+    $id = $_POST['_id'];
+    $title = $_POST['title'];
+    $library_id = $_POST['library_id'];
+    $startdate = $_POST['startdate'];
+    $enddate = $_POST['enddate'];
+    $starttime = $_POST['starttime'];
+    $endtime = $_POST['endtime'];
+    $description = $_POST['description'];
 
   require('../reusables/connect.php');
 

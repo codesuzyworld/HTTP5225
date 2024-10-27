@@ -17,6 +17,11 @@
   </div>
 
   <?php 
+    // Error Reporting
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+    
     require('reusables/connect.php');
     $id = $_GET['_id'];
     $query = "SELECT * FROM tpl_events_feed WHERE `_id` = '$id'";
@@ -29,6 +34,10 @@
     $starttime = date('H:i', strtotime($result['starttime']));
     $endtime = date('H:i', strtotime($result['endtime']));
 
+      // Fetch available libraries for the dropdown
+      $librariesQuery = "SELECT library_id, library FROM librarylocation";
+      $librariesResult = mysqli_query($connect, $librariesQuery);
+    ?> 
   ?>
 
   <div class="container">
@@ -43,11 +52,6 @@
           <div class="mb-3">
             <label for="title" class="form-label">Event Title</label>
             <input type="text" class="form-control" id="title" name="title" value="<?php echo $result['title']; ?>">
-          </div>
-
-          <div class="mb-3">
-            <label for="library_id" class="form-label">Library ID</label>
-            <input type="text" class="form-control" id="library_id" name="library_id" value="<?php echo $result['library_id']; ?>">
           </div>
 
           <div class="mb-3">
@@ -70,6 +74,17 @@
             <input type="time" class="form-control" id="endtime" name="endtime" value="<?php echo $endtime; ?>">
           </div>
 
+          <div class="mb-3">
+            <label for="library_id" class="form-label">Library</label>
+            <select class="form-control" id="library_id" name="library_id" required>
+              <?php 
+                while ($library = mysqli_fetch_assoc($librariesResult)) { 
+                  echo "<option value='{$library['library_id']}'>{$library['library']}</option>";
+                }
+              ?>
+            </select>
+          </div>
+          
           <div class="mb-3">
             <label for="description" class="form-label">Description</label>
             <textarea class="form-control" id="description" name="description"><?php echo $result['description']; ?></textarea>
