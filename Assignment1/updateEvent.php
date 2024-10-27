@@ -38,7 +38,6 @@
       $librariesQuery = "SELECT library_id, library FROM librarylocation";
       $librariesResult = mysqli_query($connect, $librariesQuery);
     ?> 
-  ?>
 
   <div class="container">
     <div class="row">
@@ -79,7 +78,8 @@
             <select class="form-control" id="library_id" name="library_id" required>
               <?php 
                 while ($library = mysqli_fetch_assoc($librariesResult)) { 
-                  echo "<option value='{$library['library_id']}'>{$library['library']}</option>";
+                  $selected = ($library['library_id'] == $result['library_id']) ? 'selected' : '';
+                  echo "<option value='{$library['library_id']}' $selected>{$library['library']}</option>";
                 }
               ?>
             </select>
