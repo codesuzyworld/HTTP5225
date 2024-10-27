@@ -20,7 +20,7 @@
       <div class="col-md-12">
         <h1 class="display-2">Add Event</h1>
       </div>
-      
+
       <?php 
       // Error Reporting
         ini_set('display_errors', 1);
@@ -99,7 +99,7 @@
           </div>
 
           <div class="mb-3">
-            <label for="otherinfo" class="form-label">Other Info (JSON)</label>
+            <label for="otherinfo" class="form-label">Photo Link (JSON)</label>
             <textarea class="form-control" id="otherinfo" name="otherinfo" rows="3" placeholder='{"smallImageURL": "http://example.com/image.jpg"}'></textarea>
           </div>
 
