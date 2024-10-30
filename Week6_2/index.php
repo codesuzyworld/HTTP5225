@@ -1,3 +1,8 @@
+<?php
+  include('inc/functions.php');
+  secure();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,6 +25,11 @@
     <div class="row">
       <div class="col-md-12">
         <h1 class="display-2">Schools</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <?php get_message(); ?>
       </div>
     </div>
     <div class="row">

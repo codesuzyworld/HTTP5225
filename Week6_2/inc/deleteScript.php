@@ -1,4 +1,5 @@
 <?php 
+  include('functions.php');
 
 if(isset($_POST['deleteSchool'])){
   $id = $_POST['id'];
@@ -13,6 +14,7 @@ if(isset($_POST['deleteSchool'])){
     $school = mysqli_query($connect, $query);
 
     if($school){
+      set_message('School was successfully deleted', 'success');
       header("Location: ../index.php");
     }else{
       echo "There was an error deleting the school: " . mysqli_error($connect); 

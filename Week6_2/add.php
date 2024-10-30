@@ -1,3 +1,7 @@
+<?php
+  include('inc/functions.php');
+  secure();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
